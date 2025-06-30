@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیستم مدیریت نگهداری و تعمیرات تجهیزات</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-cogs me-2"></i>
+                سیستم مدیریت نگهداری
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">داشبورد</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#equipment">تجهیزات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#maintenance">نگهداری</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reports">گزارشات</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-nav">
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i>
+                            علی احمدی
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>پروفایل</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>تنظیمات</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>خروج</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-5 pt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>
+                                داشبورد
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#equipment">
+                                <i class="fas fa-tools me-2"></i>
+                                مدیریت تجهیزات
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#maintenance">
+                                <i class="fas fa-wrench me-2"></i>
+                                نگهداری پیشگیرانه
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#repairs">
+                                <i class="fas fa-hammer me-2"></i>
+                                سوابق تعمیرات
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#staff">
+                                <i class="fas fa-users me-2"></i>
+                                مدیریت پرسنل
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reports">
+                                <i class="fas fa-chart-bar me-2"></i>
+                                گزارشات
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#settings">
+                                <i class="fas fa-cog me-2"></i>
+                                تنظیمات
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!-- Dashboard Section -->
+                <div id="dashboard" class="content-section active">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">داشبورد مدیریت</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-download me-1"></i>
+                                    خروجی گزارش
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-right-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                کل تجهیزات
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">247</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-tools fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-right-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                تعمیرات انجام شده
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">89</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-right-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                نگهداری معوق
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-right-danger shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                تجهیزات خراب
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-times-circle fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">نمودار تعمیرات ماهانه</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">وضعیت تجهیزات</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart" width="100%" height="50"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">فعالیت‌های اخیر</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>تاریخ</th>
+                                            <th>تجهیز</th>
+                                            <th>نوع فعالیت</th>
+                                            <th>پرسنل</th>
+                                            <th>وضعیت</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1402/12/15</td>
+                                            <td>پمپ آب شماره 1</td>
+                                            <td>تعمیر اضطراری</td>
+                                            <td>احمد رضایی</td>
+                                            <td><span class="badge bg-success">تکمیل شده</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1402/12/14</td>
+                                            <td>موتور کمپرسور</td>
+                                            <td>نگهداری پیشگیرانه</td>
+                                            <td>علی محمدی</td>
+                                            <td><span class="badge bg-warning">در حال انجام</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1402/12/13</td>
+                                            <td>سیستم تهویه</td>
+                                            <td>بازرسی دوره‌ای</td>
+                                            <td>مریم احمدی</td>
+                                            <td><span class="badge bg-success">تکمیل شده</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment Management Section -->
+                <div id="equipment" class="content-section">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">مدیریت تجهیزات</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEquipmentModal">
+                                <i class="fas fa-plus me-1"></i>
+                                افزودن تجهیز جدید
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="جستجو در تجهیزات...">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select">
+                                <option>همه دسته‌بندی‌ها</option>
+                                <option>پمپ‌ها</option>
+                                <option>موتورها</option>
+                                <option>کمپرسورها</option>
+                                <option>سیستم‌های تهویه</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select">
+                                <option>همه وضعیت‌ها</option>
+                                <option>فعال</option>
+                                <option>خراب</option>
+                                <option>در تعمیر</option>
+                                <option>غیرفعال</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Table -->
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>کد تجهیز</th>
+                                            <th>نام تجهیز</th>
+                                            <th>مدل</th>
+                                            <th>سازنده</th>
+                                            <th>مکان نصب</th>
+                                            <th>وضعیت</th>
+                                            <th>عملیات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>EQ-001</td>
+                                            <td>پمپ آب اصلی</td>
+                                            <td>P-500</td>
+                                            <td>گراندفوس</td>
+                                            <td>سالن موتورخانه</td>
+                                            <td><span class="badge bg-success">فعال</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning me-1">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>EQ-002</td>
+                                            <td>کمپرسور هوا</td>
+                                            <td>AC-750</td>
+                                            <td>اطلس کوپکو</td>
+                                            <td>سالن تولید</td>
+                                            <td><span class="badge bg-warning">در تعمیر</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning me-1">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>EQ-003</td>
+                                            <td>موتور الکتریکی</td>
+                                            <td>M-300</td>
+                                            <td>زیمنس</td>
+                                            <td>خط تولید A</td>
+                                            <td><span class="badge bg-success">فعال</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-warning me-1">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <nav aria-label="صفحه‌بندی">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">قبلی</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">بعدی</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maintenance Section -->
+                <div id="maintenance" class="content-section">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">نگهداری پیشگیرانه</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <button type="button" class="btn btn-primary">
+                                <i class="fas fa-plus me-1"></i>
+                                برنامه جدید
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Maintenance Schedule -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card shadow mb-4">
+                                <div class="card-header">
+                                    <h6 class="m-0 font-weight-bold text-primary">برنامه نگهداری</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>تجهیز</th>
+                                                    <th>نوع نگهداری</th>
+                                                    <th>تاریخ برنامه‌ریزی</th>
+                                                    <th>وضعیت</th>
+                                                    <th>عملیات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>پمپ آب اصلی</td>
+                                                    <td>تعویض روغن</td>
+                                                    <td>1402/12/20</td>
+                                                    <td><span class="badge bg-warning">معوق</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">انجام شد</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>کمپرسور هوا</td>
+                                                    <td>بازرسی فیلتر</td>
+                                                    <td>1402/12/25</td>
+                                                    <td><span class="badge bg-info">برنامه‌ریزی شده</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-primary">جزئیات</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>موتور الکتریکی</td>
+                                                    <td>بررسی اتصالات</td>
+                                                    <td>1402/12/18</td>
+                                                    <td><span class="badge bg-success">انجام شده</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info">مشاهده گزارش</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header">
+                                    <h6 class="m-0 font-weight-bold text-primary">چک‌لیست امروز</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="checklist">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="check1" checked>
+                                            <label class="form-check-label" for="check1">
+                                                بررسی فشار پمپ آب
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="check2">
+                                            <label class="form-check-label" for="check2">
+                                                کنترل دمای کمپرسور
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="check3">
+                                            <label class="form-check-label" for="check3">
+                                                بازرسی سیستم تهویه
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="check4" checked>
+                                            <label class="form-check-label" for="check4">
+                                                ثبت مقادیر کنتورها
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mt-3">ثبت چک‌لیست</button>
+                                </div>
+                            </div>
+
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <h6 class="m-0 font-weight-bold text-danger">هشدارها</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="alert alert-warning" role="alert">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        نگهداری پمپ آب 3 روز معوق است
+                                    </div>
+                                    <div class="alert alert-info" role="alert">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        تعویض فیلتر کمپرسور فردا
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Section -->
+                <div id="reports" class="content-section">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">گزارشات و تحلیل</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                                <button type="button" class="btn btn-outline-secondary">
+                                    <i class="fas fa-file-excel me-1"></i>
+                                    Excel
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    <i class="fas fa-file-pdf me-1"></i>
+                                    PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Report Filters -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">فیلترهای گزارش</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">از تاریخ</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">تا تاریخ</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">تجهیز</label>
+                                    <select class="form-select">
+                                        <option>همه تجهیزات</option>
+                                        <option>پمپ آب اصلی</option>
+                                        <option>کمپرسور هوا</option>
+                                        <option>موتور الکتریکی</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">نوع گزارش</label>
+                                    <select class="form-select">
+                                        <option>تعمیرات</option>
+                                        <option>نگهداری</option>
+                                        <option>هزینه‌ها</option>
+                                        <option>عملکرد</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <button class="btn btn-primary me-2">
+                                        <i class="fas fa-search me-1"></i>
+                                        تولید گزارش
+                                    </button>
+                                    <button class="btn btn-outline-secondary">
+                                        <i class="fas fa-redo me-1"></i>
+                                        پاک کردن فیلترها
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KPI Cards -->
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                MTBF (ساعت)
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold">168.5</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clock fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                MTTR (ساعت)
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold">4.2</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-tools fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-info text-white shadow">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                در دسترس بودن (%)
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold">97.6</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-percentage fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-warning text-white shadow">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col me-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                هزینه ماهانه (میلیون ریال)
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold">45.8</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Reports Table -->
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h6 class="m-0 font-weight-bold text-primary">گزارش تفصیلی تعمیرات</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>تاریخ</th>
+                                            <th>تجهیز</th>
+                                            <th>نوع خرابی</th>
+                                            <th>مدت تعمیر (ساعت)</th>
+                                            <th>هزینه (ریال)</th>
+                                            <th>پرسنل</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1402/12/15</td>
+                                            <td>پمپ آب اصلی</td>
+                                            <td>نشتی مهر و موم</td>
+                                            <td>3.5</td>
+                                            <td>2,500,000</td>
+                                            <td>احمد رضایی</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1402/12/10</td>
+                                            <td>کمپرسور هوا</td>
+                                            <td>خرابی والو</td>
+                                            <td>6.0</td>
+                                            <td>4,200,000</td>
+                                            <td>علی محمدی</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1402/12/08</td>
+                                            <td>موتور الکتریکی</td>
+                                            <td>تعویض بلبرینگ</td>
+                                            <td>4.5</td>
+                                            <td>1,800,000</td>
+                                            <td>مریم احمدی</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add Equipment Modal -->
+    <div class="modal fade" id="addEquipmentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">افزودن تجهیز جدید</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">کد تجهیز</label>
+                                    <input type="text" class="form-control" placeholder="EQ-004">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">نام تجهیز</label>
+                                    <input type="text" class="form-control" placeholder="نام تجهیز را وارد کنید">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">مدل</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">سازنده</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">شماره سریال</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">مکان نصب</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">تاریخ راه‌اندازی</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">وضعیت</label>
+                                    <select class="form-select">
+                                        <option>فعال</option>
+                                        <option>غیرفعال</option>
+                                        <option>در تعمیر</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">توضیحات</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">انصراف</button>
+                    <button type="button" class="btn btn-primary">ذخیره تجهیز</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
